@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>Math Service</title></head>
+<body>
+<h1>Factores</h1>
+<input id="numFactors" type="number">
+<button onclick="getFactors()">Calcular</button>
+<p id="resultFactors"></p>
+
+<h1>Primos</h1>
+<input id="numPrimes" type="number">
+<button onclick="getPrimes()">Calcular</button>
+<p id="resultPrimes"></p>
+
+<script>
+    async function getFactors() {
+        let n = document.getElementById('numFactors').value;
+        let response = await fetch(http://localhost:8082/proxy/factors/${n});
+        document.getElementById('resultFactors').innerText = await response.text();
+    }
+    async function getPrimes() {
+        let n = document.getElementById('numPrimes').value;
+        let response = await fetch(http://localhost:8082/proxy/primes/${n});
+        document.getElementById('resultPrimes').innerText = await response.text();
+    }
+</script>
+</body>
+</html>
